@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const activities = [
+  {
+    date: "xx.xx.2025",
+    title: "Uspon na Trem",
+    description: "Tradicionalni zimski uspon na najviši vrh Suve planine",
+    difficulty: "Srednje teška",
+    duration: "6-7 sati"
+  },
+  {
+    date: "xx.xx.2025",
+    title: "Golemo stražište",
+    description: "Planinarska tura do vrha Golemo stražište",
+    difficulty: "Srednja",
+    duration: "5-6 sati"
+  },
+  {
+    date: "xx.xx.2025",
+    title: "Šebetske livade",
+    description: "Lagana šetnja kroz živopisne šebetske livade",
+    difficulty: "Laka",
+    duration: "3-4 sata"
+  }
+];
+
+const months = [
+  "Januar", "Februar", "Mart", "April", "Maj", "Jun",
+  "Jul", "Avgust", "Septembar", "Oktobar", "Novembar", "Decembar"
+];
+
+const currentMonth = new Date().getMonth();
+---
+
+<Layout title="Aktivnosti - PD Šebet">
+  <main class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-8">Planirane aktivnosti</h1>
+
+    <!-- Calendar Section -->
+    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {months.map((month, index) => (
+          <div class={`p-4 rounded-lg ${currentMonth === index ? 'bg-red-50 border border-red-200' : 'bg-gray-50'}`}>
+            <h3 class="text-lg font-bold mb-3">{month}</h3>
+            <div class="space-y-2">
+              {activities.map(activity => (
+                <div class="text-sm text-gray-600">
+                  <span class="font-medium">xx.xx.2025</span>
+                  <br />
+                  {activity.title}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Upcoming Activities -->
+    <h2 class="text-2xl font-bold mb-6">Predstojeće ture</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {activities.map(activity => (
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="p-6">
+            <div class="text-red-600 font-semibold mb-2">{activity.date}</div>
+            <h3 class="text-xl font-bold mb-2">{activity.title}</h3>
+            <p class="text-gray-600 mb-4">{activity.description}</p>
+            <div class="flex justify-between text-sm text-gray-500">
+              <span>Težina: {activity.difficulty}</span>
+              <span>Trajanje: {activity.duration}</span>
+            </div>
+            <button class="mt-4 w-full bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition">
+              Prijavi se
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Additional Info -->
+    <div class="mt-12 bg-gray-50 rounded-lg p-6">
+      <h2 class="text-2xl font-bold mb-4">Važne informacije</h2>
+      <div class="text-gray-600">
+        <p class="mb-4">
+          Za sve planinarske ture je obavezna prethodna prijava. Broj učesnika je ograničen kako bismo 
+          osigurali bezbednost i kvalitet ture.
+        </p>
+        <p>
+          Oprema potrebna za sve ture:
+        </p>
+        <ul class="list-disc list-inside mt-2">
+          <li>Planinarske cipele</li>
+          <li>Slojevita odeća</li>
+          <li>Ranac sa vodom i hranom</li>
+          <li>Prva pomoć</li>
+          <li>Lična dokumenta</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</Layout>

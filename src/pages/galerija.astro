@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const images = [
+  {
+    src: "/images/suva-planina-zima.jpg",
+    alt: "Suva planina zimi",
+    title: "Zimski pejzaž Suve planine"
+  },
+  {
+    src: "/images/suva-planina-leto.jpg",
+    alt: "Suva planina leti",
+    title: "Letnji dan na planini"
+  },
+  {
+    src: "/images/suva-planina-magla.jpg",
+    alt: "Suva planina u magli",
+    title: "Maglovito jutro"
+  },
+  {
+    src: "/images/sebet-jesen.jpg",
+    alt: "Selo Šebet u jesen",
+    title: "Jesenje boje Šebeta"
+  }
+];
+---
+
+<Layout title="Galerija - PD Šebet">
+  <main class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-8">Galerija</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {images.map(image => (
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img 
+            src={image.src}
+            alt={image.alt}
+            class="w-full h-64 object-cover hover:opacity-90 transition"
+          />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">{image.title}</h3>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 bg-gray-50 rounded-lg p-6">
+      <h2 class="text-2xl font-bold mb-4">Podelite svoje fotografije</h2>
+      <p class="text-gray-600">
+        Pozivamo sve planinare i ljubitelje prirode da podele svoje fotografije sa nama. 
+        Pošaljite nam svoje najbolje fotografije Suve planine i okoline Šebeta na našu email adresu.
+      </p>
+    </div>
+  </main>
+</Layout>

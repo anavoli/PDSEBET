@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="PD Šebet - Početna">
+  <main>
+    <!-- Hero Section -->
+    <section class="relative h-[600px]">
+      <img 
+        src="/images/suva-planina-zima.jpg" 
+        alt="Suva planina zimi" 
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div class="relative container mx-auto px-4 h-full flex items-center">
+        <div class="text-white max-w-2xl">
+          <h1 class="text-5xl font-bold mb-4">Planinarsko društvo Šebet</h1>
+          <p class="text-xl mb-8">
+            Istražite lepote Suve planine sa nama. Organizujemo uspone na vrhove Trem (1.810m) i Golemo stražište.
+          </p>
+          <a 
+            href="/aktivnosti" 
+            class="bg-red-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-red-700 transition"
+          >
+            Naše aktivnosti
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest News -->
+    <section class="container mx-auto px-4 py-12">
+      <h2 class="text-3xl font-bold mb-8">Najnovije vesti</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <article class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img 
+            src="/images/suva-planina-leto.jpg" 
+            alt="Suva planina leti" 
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Uspešan uspon na Trem</h3>
+            <p class="text-gray-600 mb-4">
+              Naši članovi su uspešno izveli uspon na najviši vrh Suve planine - Trem (1.810 m) kroz predivne predele.
+            </p>
+            <a href="#" class="text-red-600 font-semibold hover:text-red-700">Pročitaj više →</a>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img 
+            src="/images/sebet-jesen.jpg" 
+            alt="Selo Šebet u jesen" 
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Život u Šebetu</h3>
+            <p class="text-gray-600 mb-4">
+              Upoznajte tradicionalni način života u našem planinskom selu Šebet, biseru Zaplanja.
+            </p>
+            <a href="#" class="text-red-600 font-semibold hover:text-red-700">Pročitaj više →</a>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img 
+            src="/images/suva-planina-magla.jpg" 
+            alt="Suva planina u magli" 
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Nova staza do Stražišta</h3>
+            <p class="text-gray-600 mb-4">
+              Obeležena je nova planinarska staza do vrha Golemo stražište. Pogledajte detalje rute.
+            </p>
+            <a href="#" class="text-red-600 font-semibold hover:text-red-700">Pročitaj više →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="bg-gray-100 py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl font-bold mb-4">O našem društvu</h2>
+            <p class="text-gray-600 mb-6">
+              Planinarsko društvo Šebet osnovano je sa ciljem promocije planinarenja i očuvanja prirodnih lepota Suve planine. 
+              Naše društvo organizuje redovne uspone na vrhove Trem i Golemo stražište, kao i druge aktivnosti vezane za 
+              planinarenje i boravak u prirodi. Kroz naše aktivnosti želimo da približimo lepote Suve planine svim ljubiteljima prirode.
+            </p>
+            <a 
+              href="/o-nama" 
+              class="inline-block bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition"
+            >
+              Saznaj više
+            </a>
+          </div>
+          <div>
+            <img 
+              src="/images/sebet-logo.png" 
+              alt="PD Šebet logo" 
+              class="rounded-lg shadow-lg max-w-md mx-auto"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
